@@ -1,0 +1,1154 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Sun Apr 27 21:35:04 COT 2014
+  Author:  Paulo
+  Type: BPEL 2.0 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="AssetBalance"
+               targetNamespace="http://www.tigo.com/GetAssetBalance"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://www.tigo.com/GetAssetBalance"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://services.tigo.com.gt/GetSubscriberGeneralInfo"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:ns2="http://www.tigo.com/Core/Common/Error/V1"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap"
+         xmlns:ns3="http://services.tigo.com.gt/GetSubscriberGeneralInfo/xsd/GetSubscriberGeneralInfo"
+         xmlns:ns4="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta06Adapter"
+         xmlns:ns5="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta01Adapter"
+         xmlns:ns6="http://www.tigo.com/Consulta02/V1"
+         xmlns:ns7="http://www.tigo.com/Consulta03/V1"
+         xmlns:ns8="http://www.tigo.com/Consulta04/V1"
+         xmlns:ns9="http://www.tigo.com/Consulta05/V1"
+         xmlns:ns10="http://www.tigo.com/Consulta07/V1"
+         xmlns:ns11="http://www.tigo.com/Consulta08/V1"
+         xmlns:ns12="http://www.tigo.com/Consulta09/V1"
+         xmlns:ns13="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter"
+         xmlns:ns14="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter"
+         xmlns:ns15="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter"
+         xmlns:ns16="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter"
+         xmlns:ns17="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter"
+         xmlns:ns18="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter"
+         xmlns:ns19="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter"
+         xmlns:ns20="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter"
+         xmlns:ns21="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter"
+         xmlns:ns22="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter"
+         xmlns:ns23="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter"
+         xmlns:ns24="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter"
+         xmlns:ns25="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter"
+         xmlns:ns26="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter"
+         xmlns:ns27="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter"
+         xmlns:ns28="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter"
+         xmlns:ns29="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta27Adapter"
+         xmlns:ns30="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta28Adapter"
+         xmlns:ns31="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta29Adapter"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:ns32="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta01Adapter"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns33="http://www.tigo.com/Consulta02Request/V1"
+         xmlns:ns34="http://www.tigo.com/Consulta03Request/V1"
+         xmlns:ns35="http://www.tigo.com/Consulta04Request/V1"
+         xmlns:ns36="http://www.tigo.com/Consulta05Request/V1"
+         xmlns:ns37="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta06Adapter"
+         xmlns:ns39="http://www.tigo.com/Consulta07Request/V1"
+         xmlns:ns40="http://www.tigo.com/Consulta08Request/V1"
+         xmlns:ns41="http://www.tigo.com/Consulta09Request/V1"
+         xmlns:ns42="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta11Adapter"
+         xmlns:ns43="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta12Adapter"
+         xmlns:ns44="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta13Adapter"
+         xmlns:ns45="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta14Adapter"
+         xmlns:ns46="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta15Adapter"
+         xmlns:ns47="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta16Adapter"
+         xmlns:ns48="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta17Adapter"
+         xmlns:ns49="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta18Adapter"
+         xmlns:ns50="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta19Adapter"
+         xmlns:ns51="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta20Adapter"
+         xmlns:ns52="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta21Adapter"
+         xmlns:ns53="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta22Adapter"
+         xmlns:ns54="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta23Adapter"
+         xmlns:ns55="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta24Adapter"
+         xmlns:ns56="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta25Adapter"
+         xmlns:ns57="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta26Adapter"
+         xmlns:ns58="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta27Adapter"
+         xmlns:ns59="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta28Adapter"
+         xmlns:ns60="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta29Adapter"
+         xmlns:ns66="http://www.tigo.com/Consulta09Response/V1"
+         xmlns:ns62="http://www.tigo.com/Consulta03Response/V1"
+         xmlns:ns61="http://www.tigo.com/Consulta02Response/V1"
+         xmlns:ns64="http://www.tigo.com/Consulta07Response/V1"
+         xmlns:ns63="http://www.tigo.com/Consulta05Response/V1"
+         xmlns:ns65="http://www.tigo.com/Consulta08Response/V1"
+         xmlns:ns67="http://www.tigo.com/Consulta06/V1"
+         xmlns:ns68="http://www.tigo.com/Consulta06Request/V1"
+         xmlns:ns69="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/ConsultaFechaCicloAdapter"
+         xmlns:ns70="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta10Adapter"
+         xmlns:ns71="http://xmlns.oracle.com/pcbpel/adapter/db/Consulta10Adapter"
+         xmlns:ns72="http://xmlns.oracle.com/pcbpel/adapter/db/ConsultaFechaCicloAdapter"
+         xmlns:ns73="http://www.tigo.com/Consulta06Response/V1"
+         xmlns:ns74="http://www.tigo.com/Consulta03ANDConsulta04/V1"
+         xmlns:ns75="http://www.tigo.com/Consulta03ANDConsulta04Request/V1"
+         xmlns:ns76="http://www.tigo.com/Consulta03ANDConsulta04Response/V1"
+         xmlns:ns77="http://www.tigo.com/Consulta10/V1"
+         xmlns:ns78="http://www.tigo.com/Consulta27/V1"
+         xmlns:ns79="http://www.tigo.com/Consulta28/V1"
+         xmlns:ns80="http://www.tigo.com/Consulta29/V1"
+         xmlns:ns81="http://www.tigo.com/Consulta29Request/V1"
+         xmlns:ns82="http://www.tigo.com/Consulta10Request/V1"
+         xmlns:ns83="http://www.tigo.com/Consulta28Request/V1"
+         xmlns:ns84="http://www.tigo.com/Consulta27Request/V1"
+         xmlns:ns38="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator"
+         xmlns:ns85="http://xmlns.tigo.com/TigoAPI/AssetBalance/V1"
+         xmlns:ns86="http://xmlns.tigo.com/TigoAPI/AssetBalance/V1/schema"
+         xmlns:ns87="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+         xmlns:ns88="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1/schema">
+  <import namespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+          location="GetCurrentCycleInfoBS.wsdl"
+          importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <import namespace="http://www.tigo.com/GetAssetBalance" location="AssetBalance.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="assetbalance_client" partnerLinkType="client:AssetBalance" myRole="AssetBalanceProvider"/>
+    <partnerLink name="GetSubscriberGeneralInfo"
+                 partnerLinkType="ns1:GetSubscriberGeneralInfo"
+                 partnerRole="execute_ptt"/>
+    <partnerLink name="Consulta05" partnerLinkType="ns9:Consulta05"
+                 partnerRole="Consulta05"/>
+    <partnerLink name="Consulta07" partnerLinkType="ns10:Consulta07"
+                 partnerRole="Consulta07"/>
+    <partnerLink name="Consulta08" partnerLinkType="ns11:Consulta08"
+                 partnerRole="Consulta08"/>
+    <partnerLink name="Consulta09" partnerLinkType="ns12:Consulta09"
+                 partnerRole="Consulta09"/>
+    <partnerLink name="Consulta11" partnerLinkType="ns13:Consulta11Adapter_plt"
+                 partnerRole="Consulta11Adapter_role"/>
+    <partnerLink name="Consulta12" partnerLinkType="ns14:Consulta12Adapter_plt"
+                 partnerRole="Consulta12Adapter_role"/>
+    <partnerLink name="Consulta13" partnerLinkType="ns15:Consulta13Adapter_plt"
+                 partnerRole="Consulta13Adapter_role"/>
+    <partnerLink name="Consulta14" partnerLinkType="ns16:Consulta14Adapter_plt"
+                 partnerRole="Consulta14Adapter_role"/>
+    <partnerLink name="Consulta15" partnerLinkType="ns17:Consulta15Adapter_plt"
+                 partnerRole="Consulta15Adapter_role"/>
+    <partnerLink name="Consulta16" partnerLinkType="ns18:Consulta16Adapter_plt"
+                 partnerRole="Consulta16Adapter_role"/>
+    <partnerLink name="Consulta17" partnerLinkType="ns19:Consulta17Adapter_plt"
+                 partnerRole="Consulta17Adapter_role"/>
+    <partnerLink name="Consulta18" partnerLinkType="ns20:Consulta18Adapter_plt"
+                 partnerRole="Consulta18Adapter_role"/>
+    <partnerLink name="Consulta19" partnerLinkType="ns21:Consulta19Adapter_plt"
+                 partnerRole="Consulta19Adapter_role"/>
+    <partnerLink name="Consulta20" partnerLinkType="ns22:Consulta20Adapter_plt"
+                 partnerRole="Consulta20Adapter_role"/>
+    <partnerLink name="Consulta21" partnerLinkType="ns23:Consulta21Adapter_plt"
+                 partnerRole="Consulta21Adapter_role"/>
+    <partnerLink name="Consulta22" partnerLinkType="ns24:Consulta22Adapter_plt"
+                 partnerRole="Consulta22Adapter_role"/>
+    <partnerLink name="Consulta23" partnerLinkType="ns25:Consulta23Adapter_plt"
+                 partnerRole="Consulta23Adapter_role"/>
+    <partnerLink name="Consulta24" partnerLinkType="ns26:Consulta24Adapter_plt"
+                 partnerRole="Consulta24Adapter_role"/>
+    <partnerLink name="Consulta25" partnerLinkType="ns27:Consulta25Adapter_plt"
+                 partnerRole="Consulta25Adapter_role"/>
+    <partnerLink name="Consulta26" partnerLinkType="ns28:Consulta26Adapter_plt"
+                 partnerRole="Consulta26Adapter_role"/>
+    <partnerLink name="Consulta10" partnerLinkType="ns77:Consulta10"
+                 partnerRole="Consulta10"/>
+    <partnerLink name="Consulta27" partnerLinkType="ns78:Consulta27"
+                 partnerRole="Consulta27"/>
+    <partnerLink name="Consulta28" partnerLinkType="ns79:Consulta28"
+                 partnerRole="Consulta28"/>
+    <partnerLink name="Consulta29" partnerLinkType="ns80:Consulta29"
+                 partnerRole="Consulta29"/>
+    <partnerLink name="Consulta06" partnerLinkType="ns67:Consulta06"
+                 partnerRole="Consulta06"/>
+    <partnerLink name="ErrorMediator" partnerLinkType="ns38:execute_ptt_PL"
+                 partnerRole="execute_ptt_Role"/>
+    <partnerLink name="GetCurrentCycleInfoBS"
+                 partnerLinkType="ns87:GetCurrentCycleInfoBS"
+                 partnerRole="GetCurrentCycleInfoService"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:AssetBalanceRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:AssetBalanceResponseMessage"/>
+    <variable name="Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_InputVariable"
+              messageType="ns1:SubscriberId"/>
+    <variable name="Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable"
+              messageType="ns1:ValidateSubscriberOutput"/>
+    <variable name="Invoke_Consulta01_Consulta01Adapter_InputVariable"
+              messageType="ns5:Consulta01AdapterInput_msg"/>
+    <variable name="Invoke_Consulta01_Consulta01Adapter_OutputVariable"
+              messageType="ns5:Consulta01AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta05_process_InputVariable"
+              messageType="ns9:Consulta05RequestMessage"/>
+    <variable name="Invoke_Consulta05_process_OutputVariable"
+              messageType="ns9:Consulta05ResponseMessage"/>
+    <variable name="Invoke_Consulta07_process_InputVariable"
+              messageType="ns10:Consulta07RequestMessage"/>
+    <variable name="Invoke_Consulta07_process_OutputVariable"
+              messageType="ns10:Consulta07ResponseMessage"/>
+    <variable name="Invoke_Consulta08_process_InputVariable"
+              messageType="ns11:Consulta08RequestMessage"/>
+    <variable name="Invoke_Consulta08_process_OutputVariable"
+              messageType="ns11:Consulta08ResponseMessage"/>
+    <variable name="Invoke_Consulta09_process_InputVariable"
+              messageType="ns12:Consulta09RequestMessage"/>
+    <variable name="Invoke_Consulta09_process_OutputVariable"
+              messageType="ns12:Consulta09ResponseMessage"/>
+    <variable name="Invoke_Consulta12_Consulta12Adapter_InputVariable"
+              messageType="ns14:Consulta12AdapterInput_msg"/>
+    <variable name="Invoke_Consulta12_Consulta12Adapter_OutputVariable"
+              messageType="ns14:Consulta12AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta11_Consulta11Adapter_InputVariable"
+              messageType="ns13:Consulta11AdapterInput_msg"/>
+    <variable name="Invoke_Consulta11_Consulta11Adapter_OutputVariable"
+              messageType="ns13:Consulta11AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta13_Consulta13Adapter_InputVariable"
+              messageType="ns15:Consulta13AdapterInput_msg"/>
+    <variable name="Invoke_Consulta13_Consulta13Adapter_OutputVariable"
+              messageType="ns15:Consulta13AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta14_Consulta14Adapter_InputVariable"
+              messageType="ns16:Consulta14AdapterInput_msg"/>
+    <variable name="Invoke_Consulta14_Consulta14Adapter_OutputVariable"
+              messageType="ns16:Consulta14AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta15_Consulta15Adapter_InputVariable"
+              messageType="ns17:Consulta15AdapterInput_msg"/>
+    <variable name="Invoke_Consulta15_Consulta15Adapter_OutputVariable"
+              messageType="ns17:Consulta15AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta16_Consulta16Adapter_InputVariable"
+              messageType="ns18:Consulta16AdapterInput_msg"/>
+    <variable name="Invoke_Consulta16_Consulta16Adapter_OutputVariable"
+              messageType="ns18:Consulta16AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta17_Consulta17Adapter_InputVariable"
+              messageType="ns19:Consulta17AdapterInput_msg"/>
+    <variable name="Invoke_Consulta17_Consulta17Adapter_OutputVariable"
+              messageType="ns19:Consulta17AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta18_Consulta18Adapter_InputVariable"
+              messageType="ns20:Consulta18AdapterInput_msg"/>
+    <variable name="Invoke_Consulta18_Consulta18Adapter_OutputVariable"
+              messageType="ns20:Consulta18AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta19_Consulta19Adapter_InputVariable"
+              messageType="ns21:Consulta19AdapterInput_msg"/>
+    <variable name="Invoke_Consulta19_Consulta19Adapter_OutputVariable"
+              messageType="ns21:Consulta19AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta20_Consulta20Adapter_InputVariable"
+              messageType="ns22:Consulta20AdapterInput_msg"/>
+    <variable name="Invoke_Consulta20_Consulta20Adapter_OutputVariable"
+              messageType="ns22:Consulta20AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta21_Consulta21Adapter_InputVariable"
+              messageType="ns23:Consulta21AdapterInput_msg"/>
+    <variable name="Invoke_Consulta21_Consulta21Adapter_OutputVariable"
+              messageType="ns23:Consulta21AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta22_Consulta22Adapter_InputVariable"
+              messageType="ns24:Consulta22AdapterInput_msg"/>
+    <variable name="Invoke_Consulta22_Consulta22Adapter_OutputVariable"
+              messageType="ns24:Consulta22AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta23_Consulta23Adapter_InputVariable"
+              messageType="ns25:Consulta23AdapterInput_msg"/>
+    <variable name="Invoke_Consulta23_Consulta23Adapter_OutputVariable"
+              messageType="ns25:Consulta23AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta24_Consulta24Adapter_InputVariable"
+              messageType="ns26:Consulta24AdapterInput_msg"/>
+    <variable name="Invoke_Consulta24_Consulta24Adapter_OutputVariable"
+              messageType="ns26:Consulta24AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta25_Consulta25Adapter_InputVariable"
+              messageType="ns27:Consulta25AdapterInput_msg"/>
+    <variable name="Invoke_Consulta25_Consulta25Adapter_OutputVariable"
+              messageType="ns27:Consulta25AdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consulta26_Consulta26Adapter_InputVariable"
+              messageType="ns28:Consulta26AdapterInput_msg"/>
+    <variable name="Invoke_Consulta26_Consulta26Adapter_OutputVariable"
+              messageType="ns28:Consulta26AdapterOutputCollection_msg"/>
+    <variable name="tigoNumbers" type="xsd:string"/>
+    <variable name="productType" type="xsd:string"/>
+    <variable name="MesActual" type="xsd:int"/>
+    <variable name="MesAnterior" type="xsd:int"/>
+    <variable name="MesActualString" type="xsd:string"/>
+    <variable name="MesAnteriorString" type="xsd:string"/>
+    <variable name="anioActual" type="xsd:string"/>
+    <variable name="Invoke_ConsultaFechaCiclo_ConsultaFechaCicloAdapter_InputVariable"
+              messageType="ns69:ConsultaFechaCicloAdapterInput_msg"/>
+    <variable name="Invoke_ConsultaFechaCiclo_ConsultaFechaCicloAdapter_OutputVariable"
+              messageType="ns69:ConsultaFechaCicloAdapterOutputCollection_msg"/>
+    <variable name="Invoke_Consultas0304_process_InputVariable"
+              messageType="ns74:Consulta03ANDConsulta04RequestMessage"/>
+    <variable name="Invoke_Consultas0304_process_OutputVariable"
+              messageType="ns74:Consulta03ANDConsulta04ResponseMessage"/>
+    <variable name="Invoke_Consulta29_process_InputVariable"
+              messageType="ns80:Consulta29RequestMessage"/>
+    <variable name="Invoke_Consulta29_process_OutputVariable"
+              messageType="ns80:Consulta29ResponseMessage"/>
+    <variable name="Invoke_Consulta10_process_InputVariable"
+              messageType="ns77:Consulta10RequestMessage"/>
+    <variable name="Invoke_Consulta10_process_OutputVariable"
+              messageType="ns77:Consulta10ResponseMessage"/>
+    <variable name="Invoke_Consulta28_process_InputVariable"
+              messageType="ns79:Consulta28RequestMessage"/>
+    <variable name="Invoke_Consulta28_process_OutputVariable"
+              messageType="ns79:Consulta28ResponseMessage"/>
+    <variable name="Invoke_Consulta27_process_InputVariable"
+              messageType="ns78:Consulta27RequestMessage"/>
+    <variable name="Invoke_Consulta27_process_OutputVariable"
+              messageType="ns78:Consulta27ResponseMessage"/>
+    <variable name="Invoke_Consulta06_process_InputVariable"
+              messageType="ns67:Consulta06RequestMessage"/>
+    <variable name="Invoke_Consulta06_process_OutputVariable"
+              messageType="ns67:Consulta06ResponseMessage"/>
+    <variable name="Invoke_ErrorProducer_execute_InputVariable"
+              messageType="ns38:requestMessage"/>
+    <variable name="getCurrentCycleInfoRequest"
+              messageType="ns87:GetCurrentCycleInfoRequestMessage"/>
+    <variable name="getCurrentCycleInfoResponse"
+              messageType="ns87:GetCurrentCycleInfoResponseMessage"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+        <sequence name="Sequence_ErrorGeneral">
+            <assign name="Assign_Error">
+              <copy>
+                <from>'DES'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:errorType</to>
+              </copy>
+              <copy>
+                <from>'999'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:code</to>
+              </copy>
+              <copy>
+                <from>'Cualquier otra excepcion'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:reason</to>
+              </copy>
+              <copy>
+                <from>'Cualquier otra excepcion'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:description</to>
+              </copy>
+            </assign>
+        <reply name="Reply_Error" variable="outputVariable"
+                   partnerLink="assetbalance_client"
+                   portType="client:AssetBalance" operation="process"/>
+            <exit name="Exit_Error"/>
+          </sequence>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in AssetBalance.wsdl) -->
+    <receive name="receiveInput" partnerLink="assetbalance_client" portType="client:AssetBalance" operation="process" variable="inputVariable" createInstance="yes"/>
+
+    <!-- Generate reply to synchronous request -->
+    <scope name="Scope_ValidarEntrada" exitOnStandardFault="no">
+      <faultHandlers>
+        <catchAll>
+          <sequence name="Sequence_Error_Params">
+            <assign name="Assign_Error">
+              <copy>
+                <from>'999'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:code</to>
+              </copy>
+              <copy>
+                <from>'DES'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:errorType</to>
+              </copy>
+              <copy>
+                <from>'Error en el mensaje de entrada'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:reason</to>
+              </copy>
+              <copy>
+                <from>'Error en el mensaje de entrada'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:description</to>
+              </copy>
+            </assign>
+            <reply name="Reply_Error" variable="outputVariable"
+                   partnerLink="assetbalance_client"
+                   portType="client:AssetBalance" operation="process"/>
+            <exit name="Exit_Error"/>
+          </sequence>
+        </catchAll>
+      </faultHandlers>
+      <if name="ValidarMsisdn">
+        <documentation/>
+        <condition>string-length($inputVariable.payload/requestBody/msisdn) &lt;= 0</condition>
+        <throw name="Throw_ErrorParametros" faultName="Throw_ErrorParametros"/>
+      </if>
+    </scope>
+    <scope name="Scope_ValidatePhone" exitOnStandardFault="no">
+      <faultHandlers>
+        <catchAll>
+          <sequence name="Sequence_CatchGetSubscriber">
+            <assign name="Assign_Error">
+              <copy>
+                <from>'NEG'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:errorType</to>
+              </copy>
+              <copy>
+                <from>'003'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:code</to>
+              </copy>
+              <copy>
+                <from>'Número no es Postpago'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:reason</to>
+              </copy>
+              <copy>
+                <from>'Número no es Postpago'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:description</to>
+              </copy>
+            </assign>
+            <reply name="Reply_Error" variable="outputVariable"
+                   partnerLink="assetbalance_client"
+                   portType="client:AssetBalance" operation="process"/>
+            <exit name="Exit_Error"/>
+          </sequence>
+        </catchAll>
+      </faultHandlers>
+      <sequence name="Sequence_GetSubscriberGeneralInfo">
+        <assign name="Assign_GetSubscriberGeneralInfo">
+          <copy>
+            <from>$inputVariable.payload/requestBody/msisdn</from>
+            <to>$Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_InputVariable.SubscriberId</to>
+          </copy>
+        </assign>
+        <invoke name="Invoke_GetSubscriberGeneralInfo" bpelx:invokeAsDetail="no"
+                partnerLink="GetSubscriberGeneralInfo"
+                portType="ns1:execute_ptt" operation="ValidateSubscriber"
+                inputVariable="Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_InputVariable"
+                outputVariable="Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable"/>
+        <assign name="Assign_ValoresSubscriber">
+          <copy>
+            <from>$Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable.ValidateSubscriberOutput/ns3:ProductType</from>
+            <to>$productType</to>
+          </copy>
+          <copy>
+            <from>$Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable.ValidateSubscriberOutput/ns3:IsTIGOPhoneNumber</from>
+            <to>$tigoNumbers</to>
+          </copy>
+        </assign>
+        <if name="If1">
+          <documentation>
+            <![CDATA[ValidateSubscriber]]>
+          </documentation>
+          <condition>contains($Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable.ValidateSubscriberOutput/ns3:ProductType,'CREDITO') and $Invoke_GetSubscriberGeneralInfo_ValidateSubscriber_OutputVariable.ValidateSubscriberOutput/ns3:IsTIGOPhoneNumber = 'true'</condition>
+          <empty name="Empty_ValidSubscriber"/>
+          <else>
+            <sequence name="Sequence_Error_NoPostpago">
+              <assign name="Assign_Error">
+                <copy>
+                  <from>'NEG'</from>
+                  <to>$outputVariable.payload/responseBody/ns2:Error/ns2:errorType</to>
+                </copy>
+                <copy>
+                  <from>'003'</from>
+                  <to>$outputVariable.payload/responseBody/ns2:Error/ns2:code</to>
+                </copy>
+                <copy>
+                  <from>'Número no es Postpago'</from>
+                  <to>$outputVariable.payload/responseBody/ns2:Error/ns2:reason</to>
+                </copy>
+                <copy>
+                  <from>'Número no es Postpago'</from>
+                  <to>$outputVariable.payload/responseBody/ns2:Error/ns2:description</to>
+                </copy>
+              </assign>
+              <reply name="Reply_Error" variable="outputVariable"
+                     partnerLink="assetbalance_client"
+                     portType="client:AssetBalance" operation="process"/>
+              <exit name="Exit_Error"/>
+            </sequence>
+          </else>
+        </if>
+      </sequence>
+    </scope>
+    <scope name="Scope_Querys" exitOnStandardFault="no">
+      <variables>
+        <variable name="MesActual" type="xsd:int"/>
+      </variables>
+      <faultHandlers>
+        <catchAll>
+            <sequence name="Sequence_ErrorGeneral">
+            <assign name="Assign_Error">
+              <copy>
+                <from>'COM'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:errorType</to>
+              </copy>
+              <copy>
+                <from>'002'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:code</to>
+              </copy>
+              <copy>
+                <from>'Error en escritura base de datos'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:reason</to>
+              </copy>
+              <copy>
+                <from>'Error en escritura base de datos'</from>
+                <to>$outputVariable.payload/responseBody/ns2:Error/ns2:description</to>
+              </copy>
+            </assign>
+            <reply name="Reply_Error" variable="outputVariable"
+                   partnerLink="assetbalance_client"
+                   portType="client:AssetBalance" operation="process"/>
+            <exit name="Exit_Error"/>
+          </sequence>
+        </catchAll>
+      </faultHandlers>
+      <sequence name="Sequence_Querys">
+        <assign name="AssignAssetBalanceRequest">
+          <copy>
+            <from>$inputVariable.payload/requestBody/msisdn</from>
+            <to>$getCurrentCycleInfoRequest.payload/ns88:MSISDN</to>
+          </copy>
+        </assign>
+        <invoke name="InvokeGetCurrentCycleInfoAdapter"
+                partnerLink="GetCurrentCycleInfoBS"
+                portType="ns87:GetCurrentCycleInfoService"
+                operation="GetCurrentCycleInfoService"
+                inputVariable="getCurrentCycleInfoRequest"
+                outputVariable="getCurrentCycleInfoResponse"
+                bpelx:invokeAsDetail="no"/>
+        <flow name="Assignments">
+          <sequence name="Sequence52">
+            <assign name="AssignConsulta05">
+              <copy>
+                <from>$inputVariable.payload/requestBody/msisdn</from>
+                <to>$Invoke_Consulta05_process_InputVariable.payload/ns36:requestBody/ns36:msisdn</to>
+              </copy>
+              <copy>
+                <from>ora:getPreference('tccserv')</from>
+                <to>$Invoke_Consulta05_process_InputVariable.payload/ns36:requestBody/ns36:TCSERV</to>
+              </copy>
+              <copy>
+                <from>ora:getPreference('datasources')</from>
+                <to>$Invoke_Consulta05_process_InputVariable.payload/ns36:requestBody/ns36:datasource</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence51">
+            <assign name="AssignConsulta07">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta07_process_InputVariable.payload/ns39:requestBody/ns39:Anexo</to>
+              </copy>
+              <copy>
+                <from>ora:getPreference('datasources')</from>
+                <to>$Invoke_Consulta07_process_InputVariable.payload/ns39:requestBody/ns39:datasource</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_UTILIZACION</from>
+                <to>$Invoke_Consulta07_process_InputVariable.payload/ns39:requestBody/ns39:DiasUtilizacion</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_DIAS</from>
+                <to>$Invoke_Consulta07_process_InputVariable.payload/ns39:requestBody/ns39:DiasTotales</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence50">
+            <assign name="AssignConsulta08">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta08_process_InputVariable.payload/ns40:requestBody/ns40:Anexo</to>
+              </copy>
+              <copy>
+                <from>ora:getPreference('datasources')</from>
+                <to>$Invoke_Consulta08_process_InputVariable.payload/ns40:requestBody/ns40:datasource</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_UTILIZACION</from>
+                <to>$Invoke_Consulta08_process_InputVariable.payload/ns40:requestBody/ns40:DiasUtilizacion</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_DIAS</from>
+                <to>$Invoke_Consulta08_process_InputVariable.payload/ns40:requestBody/ns40:DiasTotales</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence49">
+            <assign name="AssignConsulta09">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta09_process_InputVariable.payload/ns41:requestBody/ns41:Anexo</to>
+              </copy>
+              <copy>
+                <from>ora:getPreference('datasources')</from>
+                <to>$Invoke_Consulta09_process_InputVariable.payload/ns41:requestBody/ns41:datasource</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_UTILIZACION</from>
+                <to>$Invoke_Consulta09_process_InputVariable.payload/ns41:requestBody/ns41:DiasUtilizacion</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_DIAS</from>
+                <to>$Invoke_Consulta09_process_InputVariable.payload/ns41:requestBody/ns41:DiasTotales</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence48">
+            <assign name="AssignConsulta11">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta11_Consulta11Adapter_InputVariable.Consulta11AdapterInput_msg/ns42:Anexo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence47">
+            <assign name="AssignConsulta12">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta12_Consulta12Adapter_InputVariable.Consulta12AdapterInput_msg/ns43:Anexo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta12_Consulta12Adapter_InputVariable.Consulta12AdapterInput_msg/ns43:Anexo2</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta12_Consulta12Adapter_InputVariable.Consulta12AdapterInput_msg/ns43:ciclo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta12_Consulta12Adapter_InputVariable.Consulta12AdapterInput_msg/ns43:ciclo2</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence46">
+            <assign name="AssignConsulta13">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta13_Consulta13Adapter_InputVariable.Consulta13AdapterInput_msg/ns44:Anexo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta13_Consulta13Adapter_InputVariable.Consulta13AdapterInput_msg/ns44:Anexo2</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta13_Consulta13Adapter_InputVariable.Consulta13AdapterInput_msg/ns44:ciclo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta13_Consulta13Adapter_InputVariable.Consulta13AdapterInput_msg/ns44:ciclo2</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence45">
+            <assign name="AssignConsulta14">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta14_Consulta14Adapter_InputVariable.Consulta14AdapterInput_msg/ns45:Anexo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta14_Consulta14Adapter_InputVariable.Consulta14AdapterInput_msg/ns45:Anexo2</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta14_Consulta14Adapter_InputVariable.Consulta14AdapterInput_msg/ns45:ciclo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta14_Consulta14Adapter_InputVariable.Consulta14AdapterInput_msg/ns45:ciclo2</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence44">
+            <assign name="AssignConsulta15">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta15_Consulta15Adapter_InputVariable.Consulta15AdapterInput_msg/ns46:Anexo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta15_Consulta15Adapter_InputVariable.Consulta15AdapterInput_msg/ns46:Anexo2</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta15_Consulta15Adapter_InputVariable.Consulta15AdapterInput_msg/ns46:ciclo1</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_GRUPO_FAC</from>
+                <to>$Invoke_Consulta15_Consulta15Adapter_InputVariable.Consulta15AdapterInput_msg/ns46:ciclo2</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence43">
+            <assign name="AssignConsulta16">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta16_Consulta16Adapter_InputVariable.Consulta16AdapterInput_msg/ns47:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta16_Consulta16Adapter_InputVariable.Consulta16AdapterInput_msg/ns47:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence42">
+            <assign name="AssignConsulta17">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta17_Consulta17Adapter_InputVariable.Consulta17AdapterInput_msg/ns48:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta17_Consulta17Adapter_InputVariable.Consulta17AdapterInput_msg/ns48:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence41">
+            <assign name="AssignConsulta18">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta18_Consulta18Adapter_InputVariable.Consulta18AdapterInput_msg/ns49:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta18_Consulta18Adapter_InputVariable.Consulta18AdapterInput_msg/ns49:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence40">
+            <assign name="AssignConsulta19">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta19_Consulta19Adapter_InputVariable.Consulta19AdapterInput_msg/ns50:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta19_Consulta19Adapter_InputVariable.Consulta19AdapterInput_msg/ns50:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence39">
+            <assign name="AssignConsulta20">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta20_Consulta20Adapter_InputVariable.Consulta20AdapterInput_msg/ns51:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta20_Consulta20Adapter_InputVariable.Consulta20AdapterInput_msg/ns51:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence38">
+            <assign name="AssignConsulta21">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta21_Consulta21Adapter_InputVariable.Consulta21AdapterInput_msg/ns52:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta21_Consulta21Adapter_InputVariable.Consulta21AdapterInput_msg/ns52:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence37">
+            <assign name="AssignConsulta22">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta22_Consulta22Adapter_InputVariable.Consulta22AdapterInput_msg/ns53:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta22_Consulta22Adapter_InputVariable.Consulta22AdapterInput_msg/ns53:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence36">
+            <assign name="AssignConsulta23">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta23_Consulta23Adapter_InputVariable.Consulta23AdapterInput_msg/ns54:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta23_Consulta23Adapter_InputVariable.Consulta23AdapterInput_msg/ns54:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence35">
+            <assign name="AssignConsulta24">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta24_Consulta24Adapter_InputVariable.Consulta24AdapterInput_msg/ns55:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta24_Consulta24Adapter_InputVariable.Consulta24AdapterInput_msg/ns55:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence34">
+            <assign name="AssignConsulta25">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta25_Consulta25Adapter_InputVariable.Consulta25AdapterInput_msg/ns56:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta25_Consulta25Adapter_InputVariable.Consulta25AdapterInput_msg/ns56:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence33">
+            <assign name="AssignConsulta26">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta26_Consulta26Adapter_InputVariable.Consulta26AdapterInput_msg/ns57:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta26_Consulta26Adapter_InputVariable.Consulta26AdapterInput_msg/ns57:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence32">
+            <assign name="AssignConsulta27">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta27_process_InputVariable.payload/ns84:requestBody/ns84:fechaCiclo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta27_process_InputVariable.payload/ns84:requestBody/ns84:anexo</to>
+              </copy>
+              <copy>
+                <from>$inputVariable.payload/requestBody/msisdn</from>
+                <to>$Invoke_Consulta27_process_InputVariable.payload/ns84:requestBody/ns84:msisdn</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence">
+            <assign name="AssignConsulta10">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta10_process_InputVariable.payload/ns82:requestBody/ns82:Anexo</to>
+              </copy>
+            </assign>
+          </sequence>
+          <sequence name="Sequence31">
+            <assign name="AssignConsulta28">
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+                <to>$Invoke_Consulta28_process_InputVariable.payload/ns83:requestBody/ns83:Anexo</to>
+              </copy>
+              <copy>
+                <from>$getCurrentCycleInfoResponse.payload/ns88:P_FECHACICLO</from>
+                <to>$Invoke_Consulta28_process_InputVariable.payload/ns83:requestBody/ns83:fechaCiclo</to>
+              </copy>
+            </assign>
+          </sequence>
+        </flow>
+        <flow name="Flow10">
+          <sequence name="Sequence74">
+            <flow name="Flow9">
+              <sequence name="Sequence">
+                <flow name="Flow5">
+                  <sequence name="Sequence67">
+                    <invoke name="Invoke_Consulta09" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta09" portType="ns12:Consulta09"
+                            operation="process"
+                            inputVariable="Invoke_Consulta09_process_InputVariable"
+                            outputVariable="Invoke_Consulta09_process_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence66">
+                    <invoke name="Invoke_Consulta11" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta11"
+                            portType="ns13:Consulta11Adapter_ptt"
+                            operation="Consulta11Adapter"
+                            inputVariable="Invoke_Consulta11_Consulta11Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta11_Consulta11Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta13" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta13"
+                            portType="ns15:Consulta13Adapter_ptt"
+                            operation="Consulta13Adapter"
+                            inputVariable="Invoke_Consulta13_Consulta13Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta13_Consulta13Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence65">
+                    <invoke name="Invoke_Consulta12" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta12"
+                            portType="ns14:Consulta12Adapter_ptt"
+                            operation="Consulta12Adapter"
+                            inputVariable="Invoke_Consulta12_Consulta12Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta12_Consulta12Adapter_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+              <sequence name="Sequence72">
+                <flow name="Flow6">
+                  <sequence name="Sequence69">
+                    <invoke name="Invoke_Consulta05" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta05" portType="ns9:Consulta05"
+                            operation="process"
+                            inputVariable="Invoke_Consulta05_process_InputVariable"
+                            outputVariable="Invoke_Consulta05_process_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta08" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta08" portType="ns11:Consulta08"
+                            operation="process"
+                            inputVariable="Invoke_Consulta08_process_InputVariable"
+                            outputVariable="Invoke_Consulta08_process_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence68">
+                    <invoke name="Invoke_Consulta07" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta07" portType="ns10:Consulta07"
+                            operation="process"
+                            inputVariable="Invoke_Consulta07_process_InputVariable"
+                            outputVariable="Invoke_Consulta07_process_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+            </flow>
+          </sequence>
+          <sequence name="Sequence">
+            <flow name="Flow7">
+              <sequence name="Sequence">
+                <flow name="Flow1">
+                  <sequence name="Sequence55">
+                    <invoke name="Invoke_Consulta26" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta26"
+                            portType="ns28:Consulta26Adapter_ptt"
+                            operation="Consulta26Adapter"
+                            inputVariable="Invoke_Consulta26_Consulta26Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta26_Consulta26Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence54">
+                    <invoke name="Invoke_Consulta27" partnerLink="Consulta27"
+                            portType="ns78:Consulta27" operation="process"
+                            inputVariable="Invoke_Consulta27_process_InputVariable"
+                            outputVariable="Invoke_Consulta27_process_OutputVariable"
+                            bpelx:invokeAsDetail="no"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta10" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta10" portType="ns77:Consulta10"
+                            operation="process"
+                            inputVariable="Invoke_Consulta10_process_InputVariable"
+                            outputVariable="Invoke_Consulta10_process_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence53">
+                    <invoke name="Invoke_Consulta28" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta28" portType="ns79:Consulta28"
+                            operation="process"
+                            inputVariable="Invoke_Consulta28_process_InputVariable"
+                            outputVariable="Invoke_Consulta28_process_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+              <sequence name="Sequence70">
+                <flow name="Flow2">
+                  <sequence name="Sequence58">
+                    <invoke name="Invoke_Consulta22" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta22"
+                            portType="ns24:Consulta22Adapter_ptt"
+                            operation="Consulta22Adapter"
+                            inputVariable="Invoke_Consulta22_Consulta22Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta22_Consulta22Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence57">
+                    <invoke name="Invoke_Consulta23" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta23"
+                            portType="ns25:Consulta23Adapter_ptt"
+                            operation="Consulta23Adapter"
+                            inputVariable="Invoke_Consulta23_Consulta23Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta23_Consulta23Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta25" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta25"
+                            portType="ns27:Consulta25Adapter_ptt"
+                            operation="Consulta25Adapter"
+                            inputVariable="Invoke_Consulta25_Consulta25Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta25_Consulta25Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence56">
+                    <invoke name="Invoke_Consulta24" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta24"
+                            portType="ns26:Consulta24Adapter_ptt"
+                            operation="Consulta24Adapter"
+                            inputVariable="Invoke_Consulta24_Consulta24Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta24_Consulta24Adapter_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+            </flow>
+          </sequence>
+          <sequence name="Sequence73">
+            <flow name="Flow8">
+              <sequence name="Sequence">
+                <flow name="Flow3">
+                  <sequence name="Sequence61">
+                    <invoke name="Invoke_Consulta18" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta18"
+                            portType="ns20:Consulta18Adapter_ptt"
+                            operation="Consulta18Adapter"
+                            inputVariable="Invoke_Consulta18_Consulta18Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta18_Consulta18Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence60">
+                    <invoke name="Invoke_Consulta19" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta19"
+                            portType="ns21:Consulta19Adapter_ptt"
+                            operation="Consulta19Adapter"
+                            inputVariable="Invoke_Consulta19_Consulta19Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta19_Consulta19Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta21" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta21"
+                            portType="ns23:Consulta21Adapter_ptt"
+                            operation="Consulta21Adapter"
+                            inputVariable="Invoke_Consulta21_Consulta21Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta21_Consulta21Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence59">
+                    <invoke name="Invoke_Consulta20" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta20"
+                            portType="ns22:Consulta20Adapter_ptt"
+                            operation="Consulta20Adapter"
+                            inputVariable="Invoke_Consulta20_Consulta20Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta20_Consulta20Adapter_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+              <sequence name="Sequence71">
+                <flow name="Flow4">
+                  <sequence name="Sequence64">
+                    <invoke name="Invoke_Consulta14" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta14"
+                            portType="ns16:Consulta14Adapter_ptt"
+                            operation="Consulta14Adapter"
+                            inputVariable="Invoke_Consulta14_Consulta14Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta14_Consulta14Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence63">
+                    <invoke name="Invoke_Consulta15" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta15"
+                            portType="ns17:Consulta15Adapter_ptt"
+                            operation="Consulta15Adapter"
+                            inputVariable="Invoke_Consulta15_Consulta15Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta15_Consulta15Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence">
+                    <invoke name="Invoke_Consulta17" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta17"
+                            portType="ns19:Consulta17Adapter_ptt"
+                            operation="Consulta17Adapter"
+                            inputVariable="Invoke_Consulta17_Consulta17Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta17_Consulta17Adapter_OutputVariable"/>
+                  </sequence>
+                  <sequence name="Sequence62">
+                    <invoke name="Invoke_Consulta16" bpelx:invokeAsDetail="no"
+                            partnerLink="Consulta16"
+                            portType="ns18:Consulta16Adapter_ptt"
+                            operation="Consulta16Adapter"
+                            inputVariable="Invoke_Consulta16_Consulta16Adapter_InputVariable"
+                            outputVariable="Invoke_Consulta16_Consulta16Adapter_OutputVariable"/>
+                  </sequence>
+                </flow>
+              </sequence>
+            </flow>
+          </sequence>
+        </flow>
+        <assign name="AssignConsulta06">
+          <copy>
+            <from>$getCurrentCycleInfoResponse.payload/ns88:P_UTILIZACION</from>
+            <to>$Invoke_Consulta06_process_InputVariable.payload/ns68:requestBody/ns68:DiasUtilizacion</to>
+          </copy>
+          <copy>
+            <from>ora:getPreference('datasources')</from>
+            <to>$Invoke_Consulta06_process_InputVariable.payload/ns68:requestBody/ns68:datasource</to>
+          </copy>
+          <copy>
+            <from>$getCurrentCycleInfoResponse.payload/ns88:P_DIAS</from>
+            <to>$Invoke_Consulta06_process_InputVariable.payload/ns68:requestBody/ns68:DiasTotales</to>
+          </copy>
+          <copy>
+            <from>$getCurrentCycleInfoResponse.payload/ns88:P_ANEXO</from>
+            <to>$Invoke_Consulta06_process_InputVariable.payload/ns68:requestBody/ns68:Anexo</to>
+          </copy>
+          <copy>
+            <from>$Invoke_Consulta05_process_OutputVariable.payload/ns63:responseBody/ns63:TCVSER</from>
+            <to>$Invoke_Consulta06_process_InputVariable.payload/ns68:requestBody/ns68:amount</to>
+          </copy>
+        </assign>
+        <invoke name="Invoke_Consulta06" partnerLink="Consulta06"
+                portType="ns67:Consulta06" operation="process"
+                inputVariable="Invoke_Consulta06_process_InputVariable"
+                outputVariable="Invoke_Consulta06_process_OutputVariable"
+                bpelx:invokeAsDetail="no"/>
+        <assign name="AssignConsulta29">
+          <copy>
+            <from>$inputVariable.payload/requestBody/msisdn</from>
+            <to>$Invoke_Consulta29_process_InputVariable.payload/ns81:requestBody/ns81:msisdn</to>
+          </copy>
+          <copy>
+            <from>$Invoke_Consulta05_process_OutputVariable.payload/ns63:responseBody/ns63:CODIGO</from>
+            <to>$Invoke_Consulta29_process_InputVariable.payload/ns81:requestBody/ns81:codigoAmountMayor</to>
+          </copy>
+        </assign>
+        <invoke name="Invoke_Consulta29" bpelx:invokeAsDetail="no"
+                partnerLink="Consulta29" portType="ns80:Consulta29"
+                operation="process"
+                inputVariable="Invoke_Consulta29_process_InputVariable"
+                outputVariable="Invoke_Consulta29_process_OutputVariable"/>
+      </sequence>
+    </scope>
+    <scope name="ScopeResponse" exitOnStandardFault="no">
+      <sequence name="Sequence30">
+        <assign name="Transform_Response">
+          <bpelx:annotation>
+            <bpelx:pattern patternName="bpelx:transformation"/>
+          </bpelx:annotation>
+          <copy>
+            <from>ora:doXSLTransformForDoc("xsl/Salida.xsl", $Invoke_Consultas0304_process_OutputVariable.payload, "Consulta05", $Invoke_Consulta05_process_OutputVariable.payload, "Consulta06", $Invoke_Consulta06_process_OutputVariable.payload, "Consulta07", $Invoke_Consulta07_process_OutputVariable.payload, "Consulta08", $Invoke_Consulta08_process_OutputVariable.payload, "Consulta09", $Invoke_Consulta09_process_OutputVariable.payload, "Consulta10", $Invoke_Consulta10_process_OutputVariable.payload, "Consulta27", $Invoke_Consulta27_process_OutputVariable.payload, "Consulta28", $Invoke_Consulta28_process_OutputVariable.payload, "Consulta29", $Invoke_Consulta29_process_OutputVariable.payload, "Consulta01", $Invoke_Consulta01_Consulta01Adapter_OutputVariable.Consulta01AdapterOutputCollection, "Consulta11", $Invoke_Consulta11_Consulta11Adapter_OutputVariable.Consulta11AdapterOutputCollection, "Consulta12", $Invoke_Consulta12_Consulta12Adapter_OutputVariable.Consulta12AdapterOutputCollection, "Consulta13", $Invoke_Consulta13_Consulta13Adapter_OutputVariable.Consulta13AdapterOutputCollection, "Consulta14", $Invoke_Consulta14_Consulta14Adapter_OutputVariable.Consulta14AdapterOutputCollection, "Consulta15", $Invoke_Consulta15_Consulta15Adapter_OutputVariable.Consulta15AdapterOutputCollection, "Consulta16", $Invoke_Consulta16_Consulta16Adapter_OutputVariable.Consulta16AdapterOutputCollection, "Consulta17", $Invoke_Consulta17_Consulta17Adapter_OutputVariable.Consulta17AdapterOutputCollection, "Consulta18", $Invoke_Consulta18_Consulta18Adapter_OutputVariable.Consulta18AdapterOutputCollection, "Consulta19", $Invoke_Consulta19_Consulta19Adapter_OutputVariable.Consulta19AdapterOutputCollection, "Consulta20", $Invoke_Consulta20_Consulta20Adapter_OutputVariable.Consulta20AdapterOutputCollection, "Consulta21", $Invoke_Consulta21_Consulta21Adapter_OutputVariable.Consulta21AdapterOutputCollection, "Consulta22", $Invoke_Consulta22_Consulta22Adapter_OutputVariable.Consulta22AdapterOutputCollection, "Consulta23", $Invoke_Consulta23_Consulta23Adapter_OutputVariable.Consulta23AdapterOutputCollection, "Consulta24", $Invoke_Consulta24_Consulta24Adapter_OutputVariable.Consulta24AdapterOutputCollection, "Consulta25", $Invoke_Consulta25_Consulta25Adapter_OutputVariable.Consulta25AdapterOutputCollection, "Consulta26", $Invoke_Consulta26_Consulta26Adapter_OutputVariable.Consulta26AdapterOutputCollection)</from>
+            <to variable="outputVariable" part="payload"/>
+          </copy>
+        </assign>
+      </sequence>
+    </scope>
+    <reply name="replyOutput" partnerLink="assetbalance_client" portType="client:AssetBalance" operation="process" variable="outputVariable"/>
+  </sequence>
+</process>

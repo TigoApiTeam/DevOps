@@ -1,0 +1,35 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="AssetBalance"
+     targetNamespace="http://www.tigo.com/GetAssetBalance"
+     xmlns:ns2="http://www.tigo.com/GetAssetBalance"
+     xmlns:ns1="http://www.tigo.com/GetAssetBalance"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:ns3="http://xmlns.tigo.com/TigoAPI/AssetBalance/V1"
+     xmlns:client="http://www.tigo.com/GetAssetBalance"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+    <plnk:partnerLinkType name="AssetBalance">
+        <plnk:role name="AssetBalanceProvider" portType="client:AssetBalance"/>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.tigo.com/GetAssetBalance" schemaLocation="xsd/GetAssetBalanceRequest.xsd"/>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://www.tigo.com/GetAssetBalance" schemaLocation="xsd/GetAssetBalanceResponse.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="AssetBalanceRequestMessage">
+        <wsdl:part name="payload" element="ns2:GetAssetBalanceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="AssetBalanceResponseMessage">
+        <wsdl:part name="payload" element="ns2:GetAssetBalanceResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="AssetBalance">
+        <wsdl:operation name="process">
+            <wsdl:input message="ns2:AssetBalanceRequestMessage"/>
+            <wsdl:output message="ns2:AssetBalanceResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

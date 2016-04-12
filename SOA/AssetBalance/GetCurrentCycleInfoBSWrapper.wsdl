@@ -1,0 +1,15 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="GetCurrentCycleInfo"
+     targetNamespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+     xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     xmlns:WL5G3N2="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    >
+    <plnk:partnerLinkType name="GetCurrentCycleInfoBS">
+        <plnk:role name="GetCurrentCycleInfoService" portType="WL5G3N2:GetCurrentCycleInfoService"/>
+    </plnk:partnerLinkType>
+    <wsdl:import namespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1" location="GetCurrentCycleInfoBS.wsdl"/>
+</wsdl:definitions>

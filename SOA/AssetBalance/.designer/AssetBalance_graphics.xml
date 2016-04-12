@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<graphics>
+   <diagram optimizeLayout="false" popupEditor="true" fixedWidthSwimlanes="true" roundedPartnerlinks="true" centerZoom="true" validateOnLoad="true" confirmBeforeDelete="true" selectedPartnerLinkColor="0,0,153" swimlaneBackground="240,240,240" swimlaneDividerBackground="218,218,218" graphBackground="255,255,255" selectedBorderBackground="49,105,198" connectedPartnerLinkColor="204,204,255" connectablePartnerLinkColor="0,0,255" unconnectedPartnerLinkColor="192,192,192"/>
+   <annotationfile/>
+   <iconize/>
+   <partnerlink_locations>
+      <partnerlink name="assetbalance_client" x="2" y="852" side="left"/>
+      <partnerlink name="GetSubscriberGeneralInfo" x="4917" y="18" side="right"/>
+      <partnerlink name="Consulta05" x="4917" y="1813" side="right"/>
+      <partnerlink name="Consulta07" x="4917" y="1870" side="right"/>
+      <partnerlink name="Consulta08" x="4917" y="1927" side="right"/>
+      <partnerlink name="Consulta09" x="4917" y="1984" side="right"/>
+      <partnerlink name="Consulta11" x="4917" y="2041" side="right"/>
+      <partnerlink name="Consulta12" x="4917" y="2098" side="right"/>
+      <partnerlink name="Consulta13" x="4917" y="2155" side="right"/>
+      <partnerlink name="Consulta14" x="4917" y="2212" side="right"/>
+      <partnerlink name="Consulta15" x="4917" y="2269" side="right"/>
+      <partnerlink name="Consulta16" x="4917" y="2326" side="right"/>
+      <partnerlink name="Consulta17" x="4917" y="2383" side="right"/>
+      <partnerlink name="Consulta18" x="4917" y="2440" side="right"/>
+      <partnerlink name="Consulta19" x="4917" y="2497" side="right"/>
+      <partnerlink name="Consulta20" x="4917" y="2554" side="right"/>
+      <partnerlink name="Consulta21" x="4917" y="2611" side="right"/>
+      <partnerlink name="Consulta22" x="4917" y="2668" side="right"/>
+      <partnerlink name="Consulta23" x="4917" y="2725" side="right"/>
+      <partnerlink name="Consulta24" x="4917" y="2782" side="right"/>
+      <partnerlink name="Consulta25" x="4917" y="2839" side="right"/>
+      <partnerlink name="Consulta26" x="4917" y="2896" side="right"/>
+      <partnerlink name="Consulta10" x="4917" y="2953" side="right"/>
+      <partnerlink name="Consulta27" x="4917" y="3010" side="right"/>
+      <partnerlink name="Consulta28" x="4917" y="3067" side="right"/>
+      <partnerlink name="Consulta29" x="4917" y="3181" side="right"/>
+      <partnerlink name="Consulta06" x="4917" y="3124" side="right"/>
+      <partnerlink name="ErrorMediator" x="4917" y="1756" side="right"/>
+      <partnerlink name="GetCurrentCycleInfoBS" x="4917" y="1334" side="right"/>
+   </partnerlink_locations>
+   <graph_layout viewport="0,600,955,342" show_swimlanes="true">
+      <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[1]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[2]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[2]/sequence/if/else/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/faultHandlers/catchAll" type="catchall"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/faultHandlers/catchAll/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[1]" type="flow"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[1]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[2]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[3]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[4]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[5]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[6]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[7]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[8]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[9]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[10]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[11]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[12]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[13]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[14]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[15]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[16]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[17]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[18]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[19]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[20]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[21]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[22]" type="sequence"/>
+      <layout_item collapsed="true" xpath="/process/sequence/scope[3]/sequence/flow[1]/sequence[23]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[1]/flow/sequence[4]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[2]/flow/sequence[2]/flow/sequence[4]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[1]/flow/sequence[4]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[3]/flow/sequence[2]/flow/sequence[4]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[1]/flow/sequence[4]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[2]/flow" type="flow"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[2]/flow/sequence[1]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[2]/flow/sequence[2]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[3]/sequence/flow[2]/sequence[1]/flow/sequence[2]/flow/sequence[3]" type="sequence"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[4]" type="scope" showhandlers="true"/>
+      <layout_item collapsed="false" xpath="/process/sequence/scope[4]/sequence" type="sequence"/>
+   </graph_layout>
+   <bookmarks/>
+</graphics>

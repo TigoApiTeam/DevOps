@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<composite name="AssetBalance" revision="1.0" label="2014-04-27_20-59-27_173" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/">
+   <import namespace="http://www.tigo.com/GetAssetBalance" location="AssetBalance.wsdl" importType="wsdl"/>
+   <import namespace="http://services.tigo.com.gt/GetSubscriberGeneralInfo" location="http://mdwlocalhost:8011/GetSubscriberInfo/ProxyServices/GetSubscriberGeneralInfo?wsdl" importType="wsdl"/>
+   <import namespace="http://services.tigo.com.gt/GetSubscriberGeneralInfo" location="GetSubscriberGeneralInfoWrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta01Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta01_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta05/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta05_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta05/V1" location="Consulta05Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta07/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta07_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta07/V1" location="Consulta07Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta08/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta08_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta08/V1" location="Consulta08Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta09/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta09_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta09/V1" location="Consulta09Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta11_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta12_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta13_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta14_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta15_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta16_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta17_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta18_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta19_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta20_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta21_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta22_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta23_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta24_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta25_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta26_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta27Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta27_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta28Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta28_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta29Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta29_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/ConsultaFechaCicloAdapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/ConsultaFechaCiclo_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta10Adapter" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta10_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta10/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta10_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta10/V1" location="Consulta10Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta27/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta27_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta27/V1" location="Consulta27Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta28/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta28_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta28/V1" location="Consulta28Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta29/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta29_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta29/V1" location="Consulta29Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta03ANDConsulta04/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta03ANDConsulta04_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta06/V1" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta06_PS?wsdl" importType="wsdl"/>
+   <import namespace="http://www.tigo.com/Consulta06/V1" location="Consulta06Wrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator" location="ErrorMediatorWrapper.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+           location="GetCurrentCycleInfoBS.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1"
+           location="GetCurrentCycleInfoBSWrapper.wsdl" importType="wsdl"/>
+   <service name="assetbalance_client_ep" ui:wsdlLocation="AssetBalance.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/GetAssetBalance#wsdl.interface(AssetBalance)"/>
+      <binding.ws port="http://www.tigo.com/GetAssetBalance#wsdl.endpoint(assetbalance_client_ep/AssetBalance_pt)"/>
+   </service>
+   <component name="AssetBalance" version="2.0">
+      <implementation.bpel src="AssetBalance.bpel"/>
+      
+    <property name="bpel.config.inMemoryOptimization">True</property>
+    <property name="bpel.config.completionPersistPolicy">Off</property>
+ 
+     <!--property name="partnerLink.Consulta26.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta25.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+    <property name="partnerLink.Consulta24.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta23.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+    <property name="partnerLink.Consulta22.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta21.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+     <property name="partnerLink.Consulta20.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta19.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+     <property name="partnerLink.Consulta18.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta17.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+    <property name="partnerLink.Consulta16.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta15.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta14.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+   <property name="partnerLink.Consulta13.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+    <property name="partnerLink.12Consulta.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta05.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta10.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta27.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta29.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta06.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta28.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta12.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta11.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta09.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta08.nonBlockingInvoke" type="xs:string"
+                many="false">true</property>
+      <property name="partnerLink.Consulta07.nonBlockingInvoke" type="xs:string"
+                many="false">true</property-->
+      
+   </component>
+   <reference name="GetSubscriberGeneralInfo" ui:wsdlLocation="http://mdwlocalhost:8011/GetSubscriberInfo/ProxyServices/GetSubscriberGeneralInfo?wsdl">
+      <interface.wsdl interface="http://services.tigo.com.gt/GetSubscriberGeneralInfo#wsdl.interface(execute_ptt)"/>
+      <binding.ws port="http://services.tigo.com.gt/GetSubscriberGeneralInfo#wsdl.endpoint(GetSubscriberGeneralInfo/execute_pt)" location="http://mdwlocalhost:8011/GetSubscriberInfo/ProxyServices/GetSubscriberGeneralInfo?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+  
+   <reference name="Consulta05" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta05_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta05/V1#wsdl.interface(Consulta05)"/>
+      <binding.ws port="http://www.tigo.com/Consulta05/V1#wsdl.endpoint(Consulta05BindingQSService/Consulta05BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta05_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta07" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta07_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta07/V1#wsdl.interface(Consulta07)"/>
+      <binding.ws port="http://www.tigo.com/Consulta07/V1#wsdl.endpoint(Consulta07BindingQSService/Consulta07BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta07_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta08" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta08_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta08/V1#wsdl.interface(Consulta08)"/>
+      <binding.ws port="http://www.tigo.com/Consulta08/V1#wsdl.endpoint(Consulta08BindingQSService/Consulta08BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta08_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta09" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta09_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta09/V1#wsdl.interface(Consulta09)"/>
+      <binding.ws port="http://www.tigo.com/Consulta09/V1#wsdl.endpoint(Consulta09BindingQSService/Consulta09BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta09_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta11" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta11_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter#wsdl.interface(Consulta11Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter#wsdl.endpoint(Consulta11Adapter_ptt-bindingQSService/Consulta11Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta11_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta12" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta12_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter#wsdl.interface(Consulta12Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter#wsdl.endpoint(Consulta12Adapter_ptt-bindingQSService/Consulta12Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta12_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta13" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta13_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter#wsdl.interface(Consulta13Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter#wsdl.endpoint(Consulta13Adapter_ptt-bindingQSService/Consulta13Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta13_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta14" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta14_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter#wsdl.interface(Consulta14Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter#wsdl.endpoint(Consulta14Adapter_ptt-bindingQSService/Consulta14Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta14_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta15" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta15_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter#wsdl.interface(Consulta15Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter#wsdl.endpoint(Consulta15Adapter_ptt-bindingQSService/Consulta15Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta15_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta16" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta16_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter#wsdl.interface(Consulta16Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter#wsdl.endpoint(Consulta16Adapter_ptt-bindingQSService/Consulta16Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta16_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta17" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta17_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter#wsdl.interface(Consulta17Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter#wsdl.endpoint(Consulta17Adapter_ptt-bindingQSService/Consulta17Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta17_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta18" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta18_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter#wsdl.interface(Consulta18Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter#wsdl.endpoint(Consulta18Adapter_ptt-bindingQSService/Consulta18Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta18_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta19" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta19_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter#wsdl.interface(Consulta19Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter#wsdl.endpoint(Consulta19Adapter_ptt-bindingQSService/Consulta19Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta19_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta20" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta20_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter#wsdl.interface(Consulta20Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter#wsdl.endpoint(Consulta20Adapter_ptt-bindingQSService/Consulta20Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta20_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta21" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta21_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter#wsdl.interface(Consulta21Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter#wsdl.endpoint(Consulta21Adapter_ptt-bindingQSService/Consulta21Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta21_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta22" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta22_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter#wsdl.interface(Consulta22Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter#wsdl.endpoint(Consulta22Adapter_ptt-bindingQSService/Consulta22Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta22_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta23" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta23_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter#wsdl.interface(Consulta23Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter#wsdl.endpoint(Consulta23Adapter_ptt-bindingQSService/Consulta23Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta23_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta24" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta24_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter#wsdl.interface(Consulta24Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter#wsdl.endpoint(Consulta24Adapter_ptt-bindingQSService/Consulta24Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta24_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta25" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta25_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter#wsdl.interface(Consulta25Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter#wsdl.endpoint(Consulta25Adapter_ptt-bindingQSService/Consulta25Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta25_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta26" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta26_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter#wsdl.interface(Consulta26Adapter_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter#wsdl.endpoint(Consulta26Adapter_ptt-bindingQSService/Consulta26Adapter_ptt-bindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta26_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta27" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta27_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta27/V1#wsdl.interface(Consulta27)"/>
+      <binding.ws port="http://www.tigo.com/Consulta27/V1#wsdl.endpoint(Consulta27BindingQSService/Consulta27BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta27_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta28" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta28_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta28/V1#wsdl.interface(Consulta28)"/>
+      <binding.ws port="http://www.tigo.com/Consulta28/V1#wsdl.endpoint(Consulta28BindingQSService/Consulta28BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta28_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="Consulta29" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta29_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta29/V1#wsdl.interface(Consulta29)"/>
+      <binding.ws port="http://www.tigo.com/Consulta29/V1#wsdl.endpoint(Consulta29BindingQSService/Consulta29BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta29_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+  
+   <reference name="Consulta10" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta10_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta10/V1#wsdl.interface(Consulta10)"/>
+      <binding.ws port="http://www.tigo.com/Consulta10/V1#wsdl.endpoint(Consulta10BindingQSService/Consulta10BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta10_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   
+   <reference name="Consulta06" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta06_PS?wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta06/V1#wsdl.interface(Consulta06)"/>
+      <binding.ws port="http://www.tigo.com/Consulta06/V1#wsdl.endpoint(Consulta06BindingQSService/Consulta06BindingQSPort)" location="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta06_PS?wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="ErrorMediator" ui:wsdlLocation="ErrorMediatorWrapper.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator#wsdl.interface(execute_ptt)"/>
+      <binding.ws port="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator#wsdl.endpoint(ErrorMediator_ep/execute_pt)" location="ErrorMediatorWrapper.wsdl" soapVersion="1.1"/>
+   </reference>
+   <reference name="GetCurrentCycleInfoBS"
+              ui:wsdlLocation="GetCurrentCycleInfoBS.wsdl">
+      <interface.wsdl interface="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1#wsdl.interface(GetCurrentCycleInfoService)"/>
+      <binding.ws port="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1#wsdl.endpoint(GetCurrentCycleInfoService/GetCurrentCycleInfoService_pt)"
+                  location="GetCurrentCycleInfoBS.wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption"
+                   type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <wire>
+      <source.uri>assetbalance_client_ep</source.uri>
+      <target.uri>AssetBalance/assetbalance_client</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/GetSubscriberGeneralInfo</source.uri>
+      <target.uri>GetSubscriberGeneralInfo</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta05</source.uri>
+      <target.uri>Consulta05</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta07</source.uri>
+      <target.uri>Consulta07</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta08</source.uri>
+      <target.uri>Consulta08</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta09</source.uri>
+      <target.uri>Consulta09</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta11</source.uri>
+      <target.uri>Consulta11</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta12</source.uri>
+      <target.uri>Consulta12</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta13</source.uri>
+      <target.uri>Consulta13</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta14</source.uri>
+      <target.uri>Consulta14</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta15</source.uri>
+      <target.uri>Consulta15</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta16</source.uri>
+      <target.uri>Consulta16</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta17</source.uri>
+      <target.uri>Consulta17</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta18</source.uri>
+      <target.uri>Consulta18</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta19</source.uri>
+      <target.uri>Consulta19</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta20</source.uri>
+      <target.uri>Consulta20</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta21</source.uri>
+      <target.uri>Consulta21</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta22</source.uri>
+      <target.uri>Consulta22</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta23</source.uri>
+      <target.uri>Consulta23</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta24</source.uri>
+      <target.uri>Consulta24</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta25</source.uri>
+      <target.uri>Consulta25</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta26</source.uri>
+      <target.uri>Consulta26</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta10</source.uri>
+      <target.uri>Consulta10</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta27</source.uri>
+      <target.uri>Consulta27</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta28</source.uri>
+      <target.uri>Consulta28</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta29</source.uri>
+      <target.uri>Consulta29</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/Consulta06</source.uri>
+      <target.uri>Consulta06</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/ErrorMediator</source.uri>
+      <target.uri>ErrorMediator</target.uri>
+   </wire>
+   <wire>
+      <source.uri>AssetBalance/GetCurrentCycleInfoBS</source.uri>
+      <target.uri>GetCurrentCycleInfoBS</target.uri>
+   </wire>
+</composite>

@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="AssetBalance">
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <service name="assetbalance_client_ep">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/GetAssetBalance#wsdl.endpoint(assetbalance_client_ep/AssetBalance_pt)</replace>
+            </attribute>
+         </binding>
+      </service>
+      <reference name="GetSubscriberGeneralInfo">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://services.tigo.com.gt/GetSubscriberGeneralInfo#wsdl.endpoint(GetSubscriberGeneralInfo/execute_pt)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/GetSubscriberInfo/ProxyServices/GetSubscriberGeneralInfo?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta01">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta01Adapter#wsdl.endpoint(Consulta01Adapter_ptt-bindingQSService/Consulta01Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta01_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta05">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta05/V1#wsdl.endpoint(Consulta05BindingQSService/Consulta05BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta05_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta07">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta07/V1#wsdl.endpoint(Consulta07BindingQSService/Consulta07BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta07_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta08">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta08/V1#wsdl.endpoint(Consulta08BindingQSService/Consulta08BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta08_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta09">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta09/V1#wsdl.endpoint(Consulta09BindingQSService/Consulta09BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta09_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta11">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter#wsdl.endpoint(Consulta11Adapter_ptt-bindingQSService/Consulta11Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta11_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta12">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter#wsdl.endpoint(Consulta12Adapter_ptt-bindingQSService/Consulta12Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta12_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta13">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter#wsdl.endpoint(Consulta13Adapter_ptt-bindingQSService/Consulta13Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta13_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta14">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter#wsdl.endpoint(Consulta14Adapter_ptt-bindingQSService/Consulta14Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta14_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta15">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter#wsdl.endpoint(Consulta15Adapter_ptt-bindingQSService/Consulta15Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta15_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta16">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter#wsdl.endpoint(Consulta16Adapter_ptt-bindingQSService/Consulta16Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta16_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta17">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter#wsdl.endpoint(Consulta17Adapter_ptt-bindingQSService/Consulta17Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta17_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta18">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter#wsdl.endpoint(Consulta18Adapter_ptt-bindingQSService/Consulta18Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta18_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta19">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter#wsdl.endpoint(Consulta19Adapter_ptt-bindingQSService/Consulta19Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta19_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta20">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter#wsdl.endpoint(Consulta20Adapter_ptt-bindingQSService/Consulta20Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta20_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta21">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter#wsdl.endpoint(Consulta21Adapter_ptt-bindingQSService/Consulta21Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta21_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta22">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter#wsdl.endpoint(Consulta22Adapter_ptt-bindingQSService/Consulta22Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta22_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta23">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter#wsdl.endpoint(Consulta23Adapter_ptt-bindingQSService/Consulta23Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta23_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta24">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter#wsdl.endpoint(Consulta24Adapter_ptt-bindingQSService/Consulta24Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta24_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta25">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter#wsdl.endpoint(Consulta25Adapter_ptt-bindingQSService/Consulta25Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta25_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta26">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter#wsdl.endpoint(Consulta26Adapter_ptt-bindingQSService/Consulta26Adapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta26_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta27">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta27/V1#wsdl.endpoint(Consulta27BindingQSService/Consulta27BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta27_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta28">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta28/V1#wsdl.endpoint(Consulta28BindingQSService/Consulta28BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta28_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta29">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta29/V1#wsdl.endpoint(Consulta29BindingQSService/Consulta29BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta29_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="ConsultaFechaCiclo">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/ConsultaFechaCicloAdapter#wsdl.endpoint(ConsultaFechaCicloAdapter_ptt-bindingQSService/ConsultaFechaCicloAdapter_ptt-bindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/ConsultaFechaCiclo_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta10">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta10/V1#wsdl.endpoint(Consulta10BindingQSService/Consulta10BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta10_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta03ANDConsulta04">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta03ANDConsulta04/V1#wsdl.endpoint(Consulta03ANDConsulta04BindingQSService/Consulta03ANDConsulta04BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta03ANDConsulta04_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="Consulta06">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://www.tigo.com/Consulta06/V1#wsdl.endpoint(Consulta06BindingQSService/Consulta06BindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta06_PS?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="ErrorMediator">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator#wsdl.endpoint(ErrorMediator_ep/execute_pt)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>ErrorMediatorWrapper.wsdl</replace>
+            </attribute>
+         </binding>
+      </reference>
+   </composite>
+   <wsdlAndSchema name="AssetBalance.wsdl|Consulta03ANDConsulta04Wrapper.wsdl|Consulta05Wrapper.wsdl|Consulta06Wrapper.wsdl|Consulta07Wrapper.wsdl|Consulta08Wrapper.wsdl|Consulta09Wrapper.wsdl|Consulta10Wrapper.wsdl|Consulta27Wrapper.wsdl|Consulta28Wrapper.wsdl|Consulta29Wrapper.wsdl|ErrorMediatorWrapper.wsdl|GetSubscriberGeneralInfoWrapper.wsdl|xsd/Common.xsd|xsd/Error.xsd|xsd/GetAssetBalanceRequest.xsd|xsd/GetAssetBalanceResponse.xsd">
+      <searchReplace>
+         <search/>
+         <replace/>
+      </searchReplace>
+   </wsdlAndSchema>
+</SOAConfigPlan>

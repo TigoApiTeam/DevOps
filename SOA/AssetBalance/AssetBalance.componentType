@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<componentType xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ui="http://xmlns.oracle.com/soa/designer/">
+   <service name="assetbalance_client" ui:wsdlLocation="AssetBalance.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/GetAssetBalance#wsdl.interface(AssetBalance)"/>
+   </service>
+   <reference name="GetSubscriberGeneralInfo" ui:wsdlLocation="GetSubscriberGeneralInfoWrapper.wsdl">
+      <interface.wsdl interface="http://services.tigo.com.gt/GetSubscriberGeneralInfo#wsdl.interface(execute_ptt)"/>
+   </reference>
+   <reference name="Consulta05" ui:wsdlLocation="Consulta05Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta05/V1#wsdl.interface(Consulta05)"/>
+   </reference>
+   <reference name="Consulta07" ui:wsdlLocation="Consulta07Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta07/V1#wsdl.interface(Consulta07)"/>
+   </reference>
+   <reference name="Consulta08" ui:wsdlLocation="Consulta08Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta08/V1#wsdl.interface(Consulta08)"/>
+   </reference>
+   <reference name="Consulta09" ui:wsdlLocation="Consulta09Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta09/V1#wsdl.interface(Consulta09)"/>
+   </reference>
+   <reference name="Consulta11" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta11_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta11Adapter#wsdl.interface(Consulta11Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta12" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta12_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta12Adapter#wsdl.interface(Consulta12Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta13" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta13_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta13Adapter#wsdl.interface(Consulta13Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta14" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta14_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta14Adapter#wsdl.interface(Consulta14Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta15" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta15_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta15Adapter#wsdl.interface(Consulta15Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta16" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta16_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta16Adapter#wsdl.interface(Consulta16Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta17" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta17_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta17Adapter#wsdl.interface(Consulta17Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta18" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta18_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta18Adapter#wsdl.interface(Consulta18Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta19" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta19_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta19Adapter#wsdl.interface(Consulta19Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta20" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta20_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta20Adapter#wsdl.interface(Consulta20Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta21" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta21_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta21Adapter#wsdl.interface(Consulta21Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta22" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta22_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta22Adapter#wsdl.interface(Consulta22Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta23" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta23_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta23Adapter#wsdl.interface(Consulta23Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta24" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta24_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta24Adapter#wsdl.interface(Consulta24Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta25" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta25_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta25Adapter#wsdl.interface(Consulta25Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta26" ui:wsdlLocation="http://mdwlocalhost:8011/OSBAssetBalance/PS/Consulta26_PS?wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/GetCallDetailRI/GetCallDetailRI/Consulta26Adapter#wsdl.interface(Consulta26Adapter_ptt)"/>
+   </reference>
+   <reference name="Consulta10" ui:wsdlLocation="Consulta10Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta10/V1#wsdl.interface(Consulta10)"/>
+   </reference>
+   <reference name="Consulta27" ui:wsdlLocation="Consulta27Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta27/V1#wsdl.interface(Consulta27)"/>
+   </reference>
+   <reference name="Consulta28" ui:wsdlLocation="Consulta28Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta28/V1#wsdl.interface(Consulta28)"/>
+   </reference>
+   <reference name="Consulta29" ui:wsdlLocation="Consulta29Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta29/V1#wsdl.interface(Consulta29)"/>
+   </reference>
+   <reference name="Consulta06" ui:wsdlLocation="Consulta06Wrapper.wsdl">
+      <interface.wsdl interface="http://www.tigo.com/Consulta06/V1#wsdl.interface(Consulta06)"/>
+   </reference>
+   <reference name="ErrorMediator" ui:wsdlLocation="ErrorMediatorWrapper.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator#wsdl.interface(execute_ptt)"/>
+   </reference>
+   <reference name="GetCurrentCycleInfoBS"
+              ui:wsdlLocation="GetCurrentCycleInfoBSWrapper.wsdl">
+      <interface.wsdl interface="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1#wsdl.interface(GetCurrentCycleInfoService)"/>
+   </reference>
+   <property name="bpel.preference.productType">CREDITO</property>
+   <property name="bpel.preference.datasources">jdbc/as400DB</property>
+   <property name="bpel.preference.tccserv">937,45,48,148</property>
+</componentType>

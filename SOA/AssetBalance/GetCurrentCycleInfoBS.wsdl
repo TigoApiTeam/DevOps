@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions name="GetCurrentCycleInfo" targetNamespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1/schema" xmlns:WL5G3N2="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:client="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1/schema" xmlns:lat="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+      <import namespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1/schema" schemaLocation="xsd/GetCurrentCycleInfoBS.xsd"/>
+    </schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="GetCurrentCycleInfoRequestMessage">
+    <WL5G3N0:part element="WL5G3N1:InputParameters" name="payload"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="GetCurrentCycleInfoResponseMessage">
+    <WL5G3N0:part element="WL5G3N1:OutputParameters" name="payload"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="GetCurrentCycleInfoService">
+    <WL5G3N0:operation name="GetCurrentCycleInfoService">
+      <WL5G3N0:input message="WL5G3N2:GetCurrentCycleInfoRequestMessage"/>
+      <WL5G3N0:output message="WL5G3N2:GetCurrentCycleInfoResponseMessage"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="GetCurrentCycleInfoServiceBinding" type="WL5G3N2:GetCurrentCycleInfoService">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="GetCurrentCycleInfoService">
+      <WL5G3N3:operation soapAction="GetCurrentCycleInfoService" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="GetCurrentCycleInfoService">
+    <WL5G3N0:port binding="WL5G3N2:GetCurrentCycleInfoServiceBinding" name="GetCurrentCycleInfoService_pt">
+      <WL5G3N3:address location="http://mdwlocalhost:8011/OSBAssetBalance/V1/PS/GetCurrentCycleInfo_PUB"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>

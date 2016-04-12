@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://xmlns.tigo.com/TigoAPI/GetCurrentCycleInfo/V1/schema" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="InputParameters">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="MSISDN" type="xsd:string" minOccurs="0" nillable="false"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OutputParameters">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="P_UTILIZACION" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_DIAS" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_FECHA_INICIO" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="P_FECHA_FIN" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="P_ANEXO" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_GRUPO_FAC" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="P_PLAN" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_LIMITE" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_FECHACICLO" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="P_RESULT_MSG" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
