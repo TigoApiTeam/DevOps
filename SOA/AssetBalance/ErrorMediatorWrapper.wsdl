@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<wsdl:definitions name="ErrorMediator" targetNamespace="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:WL5G3N2="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <plnk:partnerLinkType name="execute_ptt_PL">
-      <plnk:role name="execute_ptt_Role" portType="WL5G3N2:execute_ptt"/>
-   </plnk:partnerLinkType>
-   <wsdl:import namespace="http://xmlns.oracle.com/ErrorAdapter/ErrorAdapter/ErrorMediator" location="http://mdwlocalhost:8011/ErrorProducerOSB/proxy/ErrorProducer?wsdl"/>
-</wsdl:definitions>
