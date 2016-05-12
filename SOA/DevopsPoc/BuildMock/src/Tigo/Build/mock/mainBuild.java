@@ -7,8 +7,19 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 
 public class mainBuild {
-    public mainBuild() {
-        JFrame frame = new Builld();
+    public mainBuild(String action) {
+        
+        JFrame frame;
+       
+        if (action.equals("BUILD") )
+        frame = new Builld();
+        else {
+            frame = new Deploy();
+        
+        
+        }
+        
+      
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = frame.getSize();
         if (frameSize.height > screenSize.height) {
@@ -30,6 +41,10 @@ public class mainBuild {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        new mainBuild();
+      
+
+        new mainBuild(args[0]);
+        
+        
     }
 }
