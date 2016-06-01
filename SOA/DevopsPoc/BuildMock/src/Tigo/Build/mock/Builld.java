@@ -36,7 +36,8 @@ public class Builld extends JFrame {
         statusBar.setText( "Tigo API Team 2016" );
         jLabel1.setFont(new Font("Serif", Font.PLAIN, 23));
         jLabel1.setText("PostComit hook: Build Successfull");
-        jLabel1.setBounds(new Rectangle(20, 80, 330, 50));
+       
+       
         jButton1.setText("Exit");
         jButton1.setBounds(new Rectangle(150, 200, 75, 21));
         jButton1.addActionListener(new ActionListener() {
