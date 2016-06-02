@@ -12,4 +12,5 @@
 12-05-2016 14:38 Se modifico README 07
 02-06-2016 15:37 Se implemento post-receive en servidor de pruebas
 02-06-2016 15:37 tests git
+02-06-2016 16:55 Modificacion para probar script post commit
 
