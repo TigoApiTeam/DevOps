@@ -15,4 +15,4 @@
 02-06-2016 16:55 Modificacion para probar script post commit
 02-06-2016 17:05 Prueba habilitado pooling
 02-06-2016 17:18 Preuba ajustando pooling a 1 minuto
-02-06-2016 17:31 Prueba de ejecucion de hook
+02-06-2016 17:31 Prueba de ejecucion de hook post-receive
