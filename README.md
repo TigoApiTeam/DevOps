@@ -16,3 +16,4 @@
 02-06-2016 17:05 Prueba habilitado pooling
 02-06-2016 17:18 Preuba ajustando pooling a 1 minuto
 02-06-2016 17:31 Prueba de ejecucion de hook post-receive
+02-06-2016 17:41 Prueba ampliando el tiempo de pooling
