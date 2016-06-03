@@ -18,4 +18,4 @@
 02-06-2016 17:31 Prueba de ejecucion de hook post-receive
 02-06-2016 17:41 Prueba ampliando el tiempo de pooling
 02-06-2016 17:55 Configuracion exitosa de curl mandando autenticacion en los parametros --user valvert:password
-02-06-2016 18:00 Prueba utilizando post-commit en lugar de post-receive
+02-06-2016 18:00 Prueba utilizando post-commit en lugar de post-receive en linux y windows
