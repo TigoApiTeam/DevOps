@@ -21,3 +21,4 @@
 02-06-2016 18:00 Prueba utilizando post-commit en lugar de post-receive en linux
 02-06-2016 18:14 Prueba utilizando post-commit para windows, requiere agregar SHEBANG y exit 0 para que funcione
 10-06-2016 12:09 Prueba de script post-commit ***
+10-06-2016 12:33 Otro cambio postCommit
