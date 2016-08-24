@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tns="http://ws.home.comcel.tel.bytesw.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.home.comcel.tel.bytesw.com/">
+
+<xs:complexType name="WSResponseObj">
+<xs:sequence>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+<xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+<xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AdditionalParametersObj">
+<xs:sequence>
+<xs:element name="parameterName" type="xs:string" minOccurs="0"/>
+<xs:element name="parameterValue" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setNewServiceComplain">
+<xs:sequence>
+<xs:element name="SetNewServiceComplainRequest" type="tns:SetNewServiceComplainRequestObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetNewServiceComplainRequestObj">
+<xs:sequence>
+<xs:element name="additionalParameters" type="tns:AdditionalParametersObj" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="affectedServices" type="xs:string" minOccurs="0"/>
+<xs:element name="area" type="xs:int"/>
+<xs:element name="comment" type="xs:string" minOccurs="0"/>
+<xs:element name="complainTypeId" type="xs:int"/>
+<xs:element name="msisdn" type="xs:int"/>
+<xs:element name="requiredSchedule" type="xs:boolean"/>
+<xs:element name="scheduleDate" type="xs:string" minOccurs="0"/>
+<xs:element name="scheduleShift" type="xs:int"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setNewServiceComplainResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:SetNewServiceComplainResponseObj" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetNewServiceComplainResponseObj">
+<xs:sequence>
+<xs:element name="otId" type="xs:string" minOccurs="0"/>
+<xs:element name="response" type="tns:WSResponseObj" minOccurs="0"/>
+<xs:element name="transactionId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>]]></con:schema>
+    <con:targetNamespace>http://ws.home.comcel.tel.bytesw.com/</con:targetNamespace>
+</con:schemaEntry>
