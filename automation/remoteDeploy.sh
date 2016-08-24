@@ -7,10 +7,10 @@ set -e
 # El proposito de este script es demostrar la automatizacion de un despliegue en un servidor remoto
 
 # Realizar el build
-bash /root/DevOps/automation/services/ManagePostSaleComplain/rebuild.sh
+bash /root/DevOps/SOA/services/ManagePostSaleComplain/rebuild.sh
 
 # Copiar el ejecutable
-sshpass -p "Comcel2012" scp /root/DevOps/automation/services/ManagePostSaleComplain/jar/ManagePostSaleComplain.jar root@172.30.13.42:/root/Devops/configuration
+sshpass -p "Comcel2012" scp /root/DevOps/SOA/services/ManagePostSaleComplain/jar/ManagePostSaleComplain.jar root@172.30.13.42:/root/Devops/configuration
 
 
 # Ejecutar script para despliegue remoto
