@@ -9,8 +9,8 @@ declare function do:ManagePostSaleComplain()
         <ns0:ManagePostSaleComplainResponse>
             <ns0:ResponseBody>
             
-                    <ns0:otId> 10 </ns0:otId>
-                     <ns0:Result>Demo POC Despliegue Remoto actualizacion repo Developer Remoto</ns0:Result>
+                    <ns0:otId> 11 </ns0:otId>
+                     <ns0:Result>Demo POC Despliegue Actualizacion de repo en hudson y build manual</ns0:Result>
               
             </ns0:ResponseBody>
         </ns0:ManagePostSaleComplainResponse>
