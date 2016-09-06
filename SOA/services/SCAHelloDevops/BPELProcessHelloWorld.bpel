@@ -77,7 +77,7 @@
       <condition>string-length($inputVariable.payload/ns1:input) &gt; 0</condition>
       <assign name="AssignInputToOutput">
         <copy>
-          <from>concat("DeploymentTest 060916 -03: ",$inputVariable.payload/ns1:input)</from>
+          <from>concat("DeploymentTest 060916 -04: ",$inputVariable.payload/ns1:input)</from>
           <to>$outputVariable.payload/ns1:message</to>
         </copy>
       </assign>
