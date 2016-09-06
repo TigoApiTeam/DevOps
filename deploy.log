@@ -45,13 +45,13 @@ import:
      [wlst] Read import jar file
      [wlst] Import file read successfully /root/Devops/configuration/ManagePostSaleComplain.jar
      [wlst] Creating unique session name
-     [wlst] Created session name : ALSBImportScript-1472683932799
+     [wlst] Created session name : ALSBImportScript-1472685389443
      [wlst] Creating SessionMBean
      [wlst] 
      [wlst] SessionMBean started new session
      [wlst] Create ALSBConfiguration
      [wlst] 
-     [wlst] ALSBConfiguration MBean found [MBeanServerInvocationHandler]com.bea:Name=ALSBConfiguration.ALSBImportScript-1472683932799,Type=com.bea.wli.sb.management.configuration.ALSBConfigurationMBean
+     [wlst] ALSBConfiguration MBean found [MBeanServerInvocationHandler]com.bea:Name=ALSBConfiguration.ALSBImportScript-1472685389443,Type=com.bea.wli.sb.management.configuration.ALSBConfigurationMBean
      [wlst] Uploading Jar file
      [wlst] Jar Uploaded
      [wlst] ALSB Project will now get imported
@@ -114,4 +114,4 @@ import:
      [wlst] Deployment of : /root/Devops/configuration/ManagePostSaleComplain.jar successful
 
 BUILD SUCCESSFUL
-Total time: 37 seconds
+Total time: 1 minute 42 seconds
