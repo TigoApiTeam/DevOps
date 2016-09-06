@@ -1,0 +1,10 @@
+--2016-09-06 15:14:27--  http://172.22.52.40:8082/git/notifyCommit?url=https://github.com/TigoApiTeam/DevOps.git&branches=master
+Connecting to 172.22.52.40:8082... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 32 [text/plain]
+Saving to: 'notifyCommit@url=https%3A%2F%2Fgithub.com%2FTigoApiTeam%2FDevOps.git&branches=master.2'
+
+     0K                                                       100%  156K=0s
+
+2016-09-06 15:14:27 (156 KB/s) - 'notifyCommit@url=https%3A%2F%2Fgithub.com%2FTigoApiTeam%2FDevOps.git&branches=master.2' saved [32/32]
+
