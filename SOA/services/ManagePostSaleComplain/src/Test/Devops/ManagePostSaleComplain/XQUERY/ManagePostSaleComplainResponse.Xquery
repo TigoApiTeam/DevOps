@@ -9,7 +9,7 @@ declare function do:ManagePostSaleComplain()
         <ns0:ManagePostSaleComplainResponse>
             <ns0:ResponseBody>
             
-                    <ns0:otId> 20160910 </ns0:otId>
+                    <ns0:otId> 20160910 11:31 </ns0:otId>
                      <ns0:Result>DEVOPS DEMO PARA OyM </ns0:Result>
               
             </ns0:ResponseBody>
